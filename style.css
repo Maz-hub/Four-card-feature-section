@@ -59,3 +59,40 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
+/* WRAPPER  */
+
+.wrapper {
+  max-width: 1110px;
+  margin-inline: auto;
+}
+
+.wrapper--narrow {
+  max-width: 540px;
+}
+
+/* HEADER */
+
+header {
+  text-align: center;
+  margin-block-start: 5rem;
+  margin-block-end: 4rem;
+}
+
+header h1 {
+  font-weight: var(--fw-light);
+}
+
+header span {
+  font-weight: var(--fw-bold);
+}
+
+header p {
+  padding-block-start: 1rem;
+  color: var(--color-Grayish-Blue);
+  font-size: var(--fs-p);
+}
+
+/* MAIN */
+
+/* CARDS */
