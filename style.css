@@ -16,6 +16,7 @@
   --color-Very-Dark-Blue: hsl(232, 12%, 34%);
   --color-Grayish-Blue: hsl(229, 6%, 66%);
   --color-Very-Light-Gray: hsl(0, 0%, 98%);
+  --color-bg: hsl(0, 0%, 95%);
 }
 
 *,
@@ -31,9 +32,11 @@ html {
   font-weight: var(--fw-regular);
   line-height: 1.7;
   color: var(--color-Very-Dark-Blue);
+  background-color: var(--color-bg);
 }
 body {
   line-height: 1.5;
+  margin-block: 5rem;
   -webkit-font-smoothing: antialiased;
 }
 img,
@@ -65,6 +68,7 @@ h6 {
 .wrapper {
   max-width: 1110px;
   margin-inline: auto;
+  padding-inline: 2rem;
 }
 
 .wrapper--narrow {
@@ -75,15 +79,15 @@ h6 {
 
 header {
   text-align: center;
-  margin-block-start: 5rem;
+
   margin-block-end: 4rem;
 }
 
-header h1 {
+h1 {
   font-weight: var(--fw-light);
 }
 
-header span {
+span {
   font-weight: var(--fw-bold);
 }
 
@@ -93,6 +97,88 @@ header p {
   font-size: var(--fs-p);
 }
 
-/* MAIN */
+/* GRID */
+
+/* .grid {
+  display: grid;
+  gap: 1.875rem;
+  grid-auto-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-areas:
+      ". two ."
+      "one two four"
+      "one three four"
+      ". three .";
+  }
+} */
+
+.grid {
+  grid-template-areas:
+    ". two ."
+    "one two four"
+    "one three four"
+    ". three .";
+}
+
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
+    gap: 1.875rem;
+    grid-auto-columns: 1fr;
+    margin-block-end: 25px;
+  }
+}
 
 /* CARDS */
+
+.card {
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 0.3rem 1rem -0.3rem rgba(84, 158, 242, 0.5);
+  border-radius: 1rem;
+  border-top: solid 4px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin-block-end: 25px;
+  }
+}
+
+.card h2 {
+  font-size: var(--fs-h2);
+  margin: 0;
+}
+
+.card p {
+  font-size: var(--fs-pCard);
+  color: var(--color-Grayish-Blue);
+}
+
+.card > img {
+  margin-top: 2.5rem;
+  margin-left: auto;
+}
+
+.card:nth-child(1) {
+  border-color: var(--color-green);
+  grid-area: one;
+}
+
+.card:nth-child(2) {
+  border-color: var(--color-red);
+  grid-area: two;
+}
+
+.card:nth-child(3) {
+  border-color: var(--color-yellow);
+  grid-area: three;
+}
+
+.card:nth-child(4) {
+  border-color: var(--color-blue);
+  grid-area: four;
+}
